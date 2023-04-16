@@ -29,16 +29,18 @@ body {
     padding: 3rem 0;
 }
 
-h1 {
+.intro {
     text-align: center;
+}
+
+h1 {
     color: #fff;
     padding: 0 2rem;
 }
 
 .intro > p {
-    text-align: center;
     color: #fff;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
 }
 
 .trial {
@@ -155,6 +157,8 @@ a {
     .intro {
         flex-basis: 50%;
         align-self: center;
+        padding-top: 5rem;
+        text-align: left;
     }
 
     h1 {
