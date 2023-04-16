@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <section class="intro">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+          but understanding how developers think is invaluable.
+        </p>
+      </section>
+      <section class="trial">
+        <h2>Try it free 7 days <span>then $20/mo. thereafter</span></h2>
+        <form action="#">
+          <input type="text" id="first-name" placeholder="First Name">
+          <p id="first-name-empty" class="text-error"></p>
+          <input type="text" id="last-name" placeholder="Last Name">
+          <p id="last-name-empty" class="text-error"></p>
+          <input type="email" id="email" placeholder="Email Address">
+          <p id="email-invalid" class="text-error"></p>
+          <input type="password" id="password" placeholder="Password">
+          <p id="password-empty" class="text-error"></p>
+          <input type="button" value="Claim your free trial" class="btn-form" id="btn-test">
+          <p class="agree">By clicking the button, you are agreeing to our
+            <span><a href="#">Terms and Services</a></span>
+          </p>
+        </form>
+      </section>
+    </div>
+  </main>
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+
+  <script>
+
+    const firstName = document.getElementById("first-name");
+    const fNameEmpty = document.getElementById("first-name-empty")
+
+    const lastName = document.getElementById("last-name");
+    const lNameEmpty = document.getElementById("last-name-empty")
+
+    const email = document.getElementById("email");
+    const emailInvalid = document.getElementById("email-invalid");
+
+    const password = document.getElementById("password");
+    const passEmpty = document.getElementById("password-empty");
+
+    const button = document.getElementById("btn-test");
+
+    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; 
+
+    function checkForm() {
+
+      if(firstName.value == "" ) {
+        fNameEmpty.innerHTML = "First Name can not be empty"
+        firstName.classList.add("error");
+      }
+      if(lastName.value == "" ) {
+        lNameEmpty.innerHTML = "Last Name can not be empty"
+        lastName.classList.add("error");
+      }
+      if(!email.value.match(regex)) {
+        emailInvalid.innerHTML = "Look like this is not an email"
+        email.classList.add("error");
+      }
+      if(password.value == "" ) {
+        passEmpty.innerHTML = "Password can not be empty"
+        password.classList.add("error");
+      }
+    }
+
+    button.addEventListener('click', checkForm);
+
+  </script>
+</body>
+</html>
